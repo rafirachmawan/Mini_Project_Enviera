@@ -1,0 +1,476 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/styles/globals.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* =========================
+   Design Tokens
+========================= */
+:root {
+  --bg: #0a0f1f; /* warna latar halaman */
+  --surface: #0e1429; /* warna semua card/section agar seragam */
+  --border: rgba(148, 163, 184, 0.14);
+  --muted: #9aa3b2;
+  --text: #e9edf5;
+  --primary: #5b8cff;
+  --accent: #22d3ee;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  --radius: 16px;
+  --ring: 0 0 0 3px rgba(91, 140, 255, 0.28);
+
+  --header-h: 62px;
+  --footer-h: 68px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   Layout
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  min-height: var(--header-h);
+  position: relative;
+}
+
+.main {
+  min-height: calc(100dvh - var(--header-h) - var(--footer-h));
+  padding: 22px 0 32px;
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+/* =========================
+   Nav (tombol di header)
+========================= */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: static;
+  z-index: 5;
+  background: transparent;
+}
+#nav-toggle {
+  display: none;
+}
+.nav-btn {
+  display: none;
+}
+
+/* tampilan tombol */
+.btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: var(--primary);
+  box-shadow: none;
+  transition: filter 0.15s ease, transform 0.05s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover {
+  filter: brightness(1.05);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--text);
+}
+.btn-danger {
+  background: var(--danger);
+}
+.btn-warning {
+  background: var(--warning);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px 10px;
+    background: transparent;
+    color: var(--text);
+  }
+  .nav {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: var(--header-h);
+    padding: 10px;
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 12px;
+  }
+  #nav-toggle:checked ~ .nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   Components (flat look)
+========================= */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+.card-inner {
+  padding: 18px;
+}
+.card-lg .card-inner {
+  padding: 26px;
+}
+.section-title {
+  font-size: 22px;
+  font-weight: 750;
+  margin: 0 0 10px;
+}
+.subtle {
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+/* grid rapi */
+.grid {
+  display: grid;
+  grid-column-gap: 16px;
+  column-gap: 16px;
+  grid-row-gap: 18px;
+  row-gap: 18px;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1024px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* input */
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: #0f142b;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+.input:focus,
+.select:focus,
+.textarea:focus {
+  box-shadow: var(--ring);
+  border-color: var(--primary);
+}
+.textarea {
+  min-height: 120px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 12.6px;
+}
+
+/* kode mini */
+.kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  background: #0c1230;
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Footer – transparan */
+.footer {
+  height: var(--footer-h);
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  background: transparent;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  z-index: 0;
+}
+
+/* Spacing kecil agar tidak nempel footer */
+section,
+.grid {
+  margin-bottom: 18px;
+}
+
+/* Utilities */
+.mt-2 {
+  margin-top: 8px;
+}
+.mt-3 {
+  margin-top: 12px;
+}
+.mt-4 {
+  margin-top: 16px;
+}
+.mt-5 {
+  margin-top: 22px;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-3 {
+  margin-bottom: 12px;
+}
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+/* ===== Booking Page: Slot List ===== */
+.slot-list {
+  display: grid;
+  grid-gap: 12px;
+  gap: 12px;
+}
+.slot-date {
+  margin: 10px 0 6px;
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 14px;
+}
+.slot-btn {
+  width: 100%;
+  text-align: left;
+  background: #0f162f;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.slot-btn:hover {
+  border-color: var(--primary);
+}
+.slot-btn.selected {
+  border-color: var(--primary);
+  box-shadow: var(--ring);
+}
+
+.slot-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+.slot-arrow {
+  opacity: 0.6;
+}
+.slot-time {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+.slot-iso {
+  font-size: 12.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slot-preview {
+  background: #0f162f;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* ============ NAV / TOPBAR PATCH ============ */
+.topbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+          backdrop-filter: saturate(140%) blur(6px);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 16, 32, 0.85),
+    rgba(11, 16, 32, 0.7)
+  );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px; /* lebih tipis biar tidak “mendorong” konten */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Tombol tab navbar – netral, tanpa glow, konsisten tinggi */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  transition: border-color 0.15s ease, background 0.15s ease,
+    transform 0.05s ease;
+}
+.nav-btn:hover {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+.nav-btn:active {
+  transform: translateY(1px);
+}
+
+/* Tombol utama yang “aktif” */
+.nav-btn-primary {
+  border-color: rgba(91, 140, 255, 0.45);
+  background: rgba(91, 140, 255, 0.1);
+}
+
+/* Pastikan konten tidak “ketutup” header sticky */
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px 40px;
+}
+
+/* Rapi di layar kecil */
+@media (max-width: 680px) {
+  .topbar-inner {
+    padding: 10px 12px;
+  }
+  .nav-btn {
+    height: 32px;
+    padding: 0 10px;
+    font-weight: 600;
+  }
+}
+

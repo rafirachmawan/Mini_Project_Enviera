@@ -1,0 +1,57 @@
+datasource db {
+  provider = "sqlite" // ganti ke "postgresql" kalau pakai Postgres
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Organizer {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  displayName String
+  timeZone    String
+  settings    Settings?
+  bookings    Booking[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Settings {
+  id          String    @id @default(cuid())
+  organizerId String    @unique
+  organizer   Organizer @relation(fields: [organizerId], references: [id])
+
+  workingHoursJson   String
+  meetingDurationMin Int
+  bufferBeforeMin    Int
+  bufferAfterMin     Int
+  minimumNoticeMin   Int
+  blackoutDatesJson  String
+
+  // RANGE TANGGAL (lokal organizer, format YYYY-MM-DD)
+  windowStartLocal String?
+  windowEndLocal   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Booking {
+  id           String    @id @default(cuid())
+  organizerId  String
+  organizer    Organizer @relation(fields: [organizerId], references: [id])
+  inviteeName  String
+  inviteeEmail String
+  startAtUtc   DateTime
+  endAtUtc     DateTime
+
+  // ENUM DIHAPUS untuk SQLite; gunakan string
+  status String @default("CONFIRMED")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([organizerId, startAtUtc])
+}
