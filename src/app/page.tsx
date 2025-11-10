@@ -26,12 +26,12 @@ export default function Home() {
             <h2 className="section-title">Mulai Cepat</h2>
             <ol className="mt-3" style={{ paddingLeft: 18, lineHeight: 1.7 }}>
               <li className="mt-2">
-                Buka <span className="kbd">/organizer/ORG1/settings</span> lalu
-                klik <b>Simpan</b> untuk membuat organizer + pengaturan.
+                Buka <span className="kbd">Setting</span> Di navbar
+                <b>Simpan</b> untuk membuat organizer + pengaturan.
               </li>
               <li className="mt-2">
-                Bagikan link publik <span className="kbd">/ORG1</span> kepada
-                invitee untuk memesan slot.
+                Buka <span className="kbd">Booking</span> untuk melakukan boking
+                meeting.
               </li>
               <li className="mt-2">
                 Kelola pemesanan di <span className="kbd">/organizer/ORG1</span>{" "}

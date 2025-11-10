@@ -32,12 +32,12 @@ export default function OrganizerDashboard() {
               style={{ paddingLeft: 16, lineHeight: 1.8, margin: 0 }}
             >
               <li>
-                Buka <span className="kbd">/organizer/ORG1/settings</span> lalu
-                klik <b>Simpan</b> untuk membuat organizer + pengaturan.
+                Buka <span className="kbd">Setting di navbar</span> lalu klik{" "}
+                <b>Simpan</b> untuk membuat organizer + pengaturan.
               </li>
               <li>
-                Bagikan link publik <span className="kbd">/ORG1</span> kepada
-                invitee untuk memesan slot.
+                Klik <span className="kbd">Booking</span> Untuk melakukan
+                booking waktu untuk meeting.
               </li>
               <li>
                 Kelola pemesanan di{" "}

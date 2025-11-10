@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import type { ReactNode } from "react";
+import Nav from "./Nav";
 
-const DEFAULT_ORG_ID = "ORG1";
+const DEFAULT_ORG_ID = "ORG1"; // ganti kalau ID-mu berbeda
 
 export const metadata = { title: "Scheduler MVP" };
 
@@ -9,7 +10,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {/* ==== HEADER ==== */}
+        {/* HEADER */}
         <header className="topbar">
           <div className="topbar-inner">
             <div className="brand">
@@ -17,27 +18,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <span>Scheduler MVP</span>
             </div>
 
-            <nav className="nav">
-              <a href={`/${DEFAULT_ORG_ID}`} className="nav-btn">
-                Booking
-              </a>
-              <a
-                href={`/organizer/${DEFAULT_ORG_ID}/settings`}
-                className="nav-btn"
-              >
-                Settings
-              </a>
-              <a
-                href={`/organizer/${DEFAULT_ORG_ID}`}
-                className="nav-btn nav-btn-primary"
-              >
-                Dashboard
-              </a>
-            </nav>
+            {/* Navbar */}
+            <Nav orgId={DEFAULT_ORG_ID} />
           </div>
         </header>
 
-        {/* ==== CONTENT SHELL ==== */}
+        {/* CONTENT */}
         <div className="app-shell">{children}</div>
       </body>
     </html>

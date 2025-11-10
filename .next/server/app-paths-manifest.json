@@ -1,8 +1,9 @@
 {
-  "/page": "app/page.js",
-  "/[organizerId]/page": "app/[organizerId]/page.js",
-  "/organizer/[organizerId]/settings/page": "app/organizer/[organizerId]/settings/page.js",
+  "/organizer/[organizerId]/bookings/page": "app/organizer/[organizerId]/bookings/page.js",
   "/organizer/[organizerId]/page": "app/organizer/[organizerId]/page.js",
-  "/api/organizer/[organizerId]/settings/route": "app/api/organizer/[organizerId]/settings/route.js",
-  "/api/public/[organizerId]/slots/route": "app/api/public/[organizerId]/slots/route.js"
+  "/organizer/[organizerId]/settings/page": "app/organizer/[organizerId]/settings/page.js",
+  "/api/organizer/[organizerId]/bookings/route": "app/api/organizer/[organizerId]/bookings/route.js",
+  "/[organizerId]/page": "app/[organizerId]/page.js",
+  "/api/public/[organizerId]/slots/route": "app/api/public/[organizerId]/slots/route.js",
+  "/api/organizer/[organizerId]/settings/route": "app/api/organizer/[organizerId]/settings/route.js"
 }
